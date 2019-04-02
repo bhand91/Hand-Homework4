@@ -58,7 +58,18 @@ namespace RazorPagesMovie.Models
                     }
                 );
 
-                
+                Review review1 = new Review{ Score = 1};
+                Review review2 = new Review{ Score = 2};
+                Review review3 = new Review{ Score = 3};
+                Review review4 = new Review{ Score = 4};
+                Review review5 = new Review{ Score = 5};
+
+                context.Add(review1);
+                context.Add(review2);
+                context.Add(review3);
+                context.Add(review4);
+                context.Add(review5);
+
                 context.SaveChanges();
             }
 
