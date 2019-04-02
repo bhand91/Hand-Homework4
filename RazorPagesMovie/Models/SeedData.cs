@@ -19,6 +19,7 @@ namespace RazorPagesMovie.Models
                     return;   // DB has been seeded
                 }
 
+
                 context.Movie.AddRange(
                     new Movie
                     {
@@ -56,8 +57,11 @@ namespace RazorPagesMovie.Models
                         Rating = "R"
                     }
                 );
+
+                
                 context.SaveChanges();
             }
+
         }
     }
 }
