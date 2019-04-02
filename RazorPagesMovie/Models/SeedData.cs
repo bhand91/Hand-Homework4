@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace RazorPagesMovie.Models
 {
@@ -18,7 +19,6 @@ namespace RazorPagesMovie.Models
                 {
                     return;   // DB has been seeded
                 }
-
 
                 context.Movie.AddRange(
                     new Movie
@@ -58,6 +58,11 @@ namespace RazorPagesMovie.Models
                     }
                 );
 
+                if (context.Review.Any())
+                {
+                    return;   // DB has been seeded
+                }
+                
                 Review review1 = new Review{ Score = 1};
                 Review review2 = new Review{ Score = 2};
                 Review review3 = new Review{ Score = 3};
@@ -69,6 +74,7 @@ namespace RazorPagesMovie.Models
                 context.Add(review3);
                 context.Add(review4);
                 context.Add(review5);
+                
 
                 context.SaveChanges();
             }
